@@ -25,8 +25,8 @@ const Preloader = ({ onComplete }) => {
 
     useEffect(() => {
         if (logoDone && index === LANGUAGES.length - 1) {
-            const exitTimer = setTimeout(() => setIsExiting(true), 500);
-            const completeTimer = setTimeout(() => onComplete && onComplete(), 1400);
+            const exitTimer = setTimeout(() => setIsExiting(true), 200); // Shorter pause before exit
+            const completeTimer = setTimeout(() => onComplete && onComplete(), 1100); // Sync with 1s transition
             return () => { clearTimeout(exitTimer); clearTimeout(completeTimer); };
         }
     }, [logoDone, index, onComplete]);

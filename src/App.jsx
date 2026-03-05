@@ -33,24 +33,55 @@ const RouteChangeHandler = ({ children }) => {
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
-  // Automatically update Document Title from portfolio data
+  // Automatically update Document Title and Favicon from portfolio data
   useEffect(() => {
     if (portfolioData?.general?.siteName) {
       document.title = portfolioData.general.siteName;
+    }
+
+    const faviconUrl = portfolioData?.general?.favicon;
+    if (faviconUrl) {
+      const img = new Image();
+      img.src = faviconUrl;
+      img.crossOrigin = "anonymous";
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const size = 64; // Standard high-res favicon size
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+
+        // Create circle clipping path
+        ctx.beginPath();
+        ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.clip();
+
+        // Draw image stretched to cover the circle
+        ctx.drawImage(img, 0, 0, size, size);
+
+        // Update favicon link
+        let link = document.querySelector("link[rel~='icon']");
+        if (!link) {
+          link = document.createElement('link');
+          link.rel = 'icon';
+          document.head.appendChild(link);
+        }
+        link.href = canvas.toDataURL('image/png');
+      };
     }
   }, []);
 
   return (
     <ThemeProvider>
       {isLoading && <Preloader onComplete={() => setIsLoading(false)} />}
-      <div className={`transition-opacity duration-1000 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+      <div className="relative z-10">
         <SmoothScroll>
           <BrowserRouter>
             <RouteChangeHandler>
               <Routes>
                 <Route path="/" element={<PortfolioPage />} />
                 <Route path="/case-study/:id" element={<LuminaPage />} />
-                {/* Backwards compatibility for old static routes if needed */}
                 <Route path="/lumina" element={<LuminaPage />} />
               </Routes>
             </RouteChangeHandler>

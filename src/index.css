@@ -138,7 +138,8 @@
     html {
         background-color: var(--bg-base);
         color: var(--text-primary);
-        transition: background-color 0.15s ease, color 0.15s ease;
+        /* Very fast transition for core colors to feel responsive */
+        transition: background-color 0.1s ease, color 0.1s ease;
     }
 
     body {
@@ -164,6 +165,7 @@
             0 4px 16px -4px var(--glass-shadow-b),
             inset 0 1px 0 var(--glass-inset);
         transition: background-color 0.3s ease, border-color 0.3s ease;
+        will-change: backdrop-filter;
     }
 
     /* ── Glass Nav ── */
@@ -176,6 +178,7 @@
             0 8px 32px var(--glass-shadow-b),
             inset 0 1px 0 var(--glass-inset);
         transition: background-color 0.3s ease, border-color 0.3s ease;
+        will-change: backdrop-filter;
     }
 
     /* ── Dock Glass ── */
@@ -229,20 +232,20 @@
         z-index: -1;
         opacity: 0.6;
         pointer-events: none;
-        will-change: transform;
+        will-change: transform, opacity;
         transform: translateZ(0);
-        transition: background 0.3s ease;
+        transition: background-color 0.4s ease, opacity 0.4s ease;
     }
 
     .mesh-gradient::before {
-        background: var(--orb-1);
+        background-color: var(--orb-1);
         top: -10%;
         left: -10%;
         animation: floatOrb 22s infinite ease-in-out alternate;
     }
 
     .mesh-gradient::after {
-        background: var(--orb-2);
+        background-color: var(--orb-2);
         bottom: -10%;
         right: -10%;
         animation: floatOrbReverse 28s infinite ease-in-out alternate;
@@ -254,16 +257,16 @@
         height: 60vh;
         border-radius: 50%;
         filter: blur(140px);
-        background: var(--orb-3);
+        background-color: var(--orb-3);
         top: 30%;
         left: 20%;
         opacity: 0.5;
         animation: driftOrb 35s infinite ease-in-out alternate;
         pointer-events: none;
         z-index: -1;
-        will-change: transform;
+        will-change: transform, opacity;
         transform: translateZ(0);
-        transition: background 0.3s ease;
+        transition: background-color 0.4s ease, opacity 0.4s ease;
     }
 
     /* ── Project Cards ── */
@@ -434,6 +437,7 @@
         backdrop-filter: var(--stacked-blur);
         -webkit-backdrop-filter: var(--stacked-blur);
         transition: background-color 0.3s ease;
+        will-change: backdrop-filter;
     }
 
     /* ── Hero Image Mask ── */

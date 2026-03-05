@@ -48,10 +48,10 @@ const LuminaPage = () => {
         gsap.registerPlugin(ScrollTrigger);
 
         const ctx = gsap.context(() => {
-            // Entrance animation: fade and slide up slightly for the whole page
+            // Entrance animation: slight slide up for the whole page
             gsap.fromTo(".case-study-content",
-                { opacity: 0, scale: 0.98, y: 40 },
-                { opacity: 1, scale: 1, y: 0, duration: 1.2, ease: "power4.out", clearProps: "all" }
+                { scale: 0.99, y: 20 },
+                { scale: 1, y: 0, duration: 1.0, ease: "power4.out", clearProps: "all" }
             );
 
             const tl = gsap.timeline({ defaults: { ease: "power3.out" } });

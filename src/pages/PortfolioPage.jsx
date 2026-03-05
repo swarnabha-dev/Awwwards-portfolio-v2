@@ -12,7 +12,11 @@ const PortfolioPage = () => {
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.fromTo('.portfolio-content', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', clearProps: 'all' });
+        // Entrance animation: slight slide up for the whole page
+        gsap.fromTo(".portfolio-content", // Retained .portfolio-content as it's the main content wrapper in this file
+            { scale: 0.99, y: 20 },
+            { scale: 1, y: 0, duration: 1.0, ease: "power4.out", clearProps: "all" }
+        );
     }, []);
 
     const { work, research, about, general } = portfolioData;
