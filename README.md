@@ -2,7 +2,7 @@
 
 A high-performance, premium developer portfolio built with modern web technologies, focusing on motion design, glassmorphism, and seamless user experiences. This project is designed to be highly configurable via a single data file.
 
-![Portfolio Screenshot](public/Picsart_26-01-08_21-07-32-700%20i.png)
+
 
 ## ✨ Features
 
