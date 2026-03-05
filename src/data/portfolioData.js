@@ -5,11 +5,12 @@ export const portfolioData = {
         firstName: "SWARNABHA",
         lastName: "HALDER",
         email: "swarnabha@swarnabha.tech",
-        phone: "+1 (555) 012-3456",
+        phone: "+91 7003084915",
         socials: [
-            { name: "Twitter", url: "#" },
-            { name: "LinkedIn", url: "#" },
-            { name: "Github", url: "#" },
+            { name: "Twitter", url: "https://x.com/swarnabha_h" },
+            { name: "LinkedIn", url: "https://www.linkedin.com/in/swarnabha-halder-627692254/" },
+            { name: "Github", url: "https://github.com/swarnabha-dev" },
+            { name: "Instagram", url: "https://www.instagram.com/swarnabha_halder/" },
         ]
     },
     hero: {
@@ -41,7 +42,7 @@ export const portfolioData = {
             "I'm Swarnabha — a creative developer with a deep obsession for motion, material, and interface craft. I don't separate design from engineering. Every interaction I build has been stress-tested against real human behavior and visual intuition refined over years of obsessive iteration.",
             "My work spans fintech dashboards, generative AI tooling, spatial interfaces, and design systems built to scale across organizations. I speak fluent designer and fluent engineer — often in the same sentence."
         ],
-        resumeLink: "#",
+        resumeLink: "https://3602sv-my.sharepoint.com/:b:/g/personal/swarnabha_3602sv_onmicrosoft_com/IQD64-rwuB2pR4_6GSYYk7uYAdCucjw3FvIDKrGtJwiXVrU?e=T5BsrK",
         // You can easily change your core expertise labels here
         coreExpertise: ["React / Next.js", "TypeScript", "GSAP / Motion", "Three.js", "Figma Systems", "Node.js", "AI Integration", "WebGL", "iOS / Swift", "Design Systems"]
     },

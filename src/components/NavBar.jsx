@@ -116,7 +116,7 @@ const NavBar = ({ isCaseStudy = false }) => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full flex justify-center z-[100] pt-4 md:pt-6 transition-transform duration-500" id="navbar">
+        <nav className="fixed top-0 left-0 w-full flex justify-center z-100 pt-4 md:pt-6 transition-transform duration-500" id="navbar">
             <div className="glass-nav rounded-full px-2 md:px-3 py-1.5 md:py-2 flex justify-between items-center mx-2 md:mx-4 w-full max-w-3xl backdrop-blur-xl relative shadow-2xl">
                 {/* Embedded decorative highlight for top liquid edge */}
                 <div className="absolute inset-0 rounded-full pointer-events-none border-t border-white/40 dark:border-white/20 mix-blend-overlay"></div>
@@ -150,7 +150,7 @@ const NavBar = ({ isCaseStudy = false }) => {
                             color: 'var(--bg-base)',
                             boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.05)',
                         }}
-                        href="#contact"
+                        href={`mailto:${portfolioData?.general?.email || ''}`}
                     >
                         Let's Talk
                     </a>

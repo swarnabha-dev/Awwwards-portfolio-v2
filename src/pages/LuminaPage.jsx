@@ -198,7 +198,7 @@ const LuminaPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {data?.mobileImage && (
                             <div className="space-y-4">
-                                <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden glass-panel relative group">
+                                <div className="w-full aspect-4/3 rounded-3xl overflow-hidden glass-panel relative group">
                                     <img alt="Mobile App" className="img-parallax w-full h-full object-cover opacity-70 mix-blend-luminosity group-hover:opacity-100 transition-opacity duration-500" src={data.mobileImage} />
                                 </div>
                                 <p className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>{data.mobileImageLabel || 'Mobile responsiveness'}</p>
@@ -206,7 +206,7 @@ const LuminaPage = () => {
                         )}
                         {data?.darkModeImage && (
                             <div className="space-y-4">
-                                <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden glass-panel relative group">
+                                <div className="w-full aspect-4/3 rounded-3xl overflow-hidden glass-panel relative group">
                                     <img alt="Dark Mode" className="img-parallax w-full h-full object-cover opacity-70 mix-blend-luminosity group-hover:opacity-100 transition-opacity duration-500" src={data.darkModeImage} />
                                 </div>
                                 <p className="text-sm font-medium" style={{ color: 'var(--text-secondary)' }}>{data.darkModeImageLabel || 'Adaptive theming'}</p>

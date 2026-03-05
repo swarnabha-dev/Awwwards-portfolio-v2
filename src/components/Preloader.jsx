@@ -32,12 +32,12 @@ const Preloader = ({ onComplete }) => {
     }, [logoDone, index, onComplete]);
 
     return (
-        <div className={`fixed inset-0 z-[200] bg-[var(--preloader-bg)] flex flex-col items-center justify-center transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform transform-gpu ${isExiting ? '-translate-y-full' : 'translate-y-0'} ${isExiting ? 'pointer-events-none' : 'pointer-events-auto'}`}>
+        <div className={`fixed inset-0 z-200 bg-(--preloader-bg) flex flex-col items-center justify-center transition-transform duration-1000 ease-[cubic-bezier(0.19,1,0.22,1)] will-change-transform transform-gpu ${isExiting ? '-translate-y-full' : 'translate-y-0'} ${isExiting ? 'pointer-events-none' : 'pointer-events-auto'}`}>
             <div className="mb-4 w-[80vw] max-w-[500px]">
                 <SLogoReveal />
             </div>
             <div className={`h-8 overflow-hidden transition-opacity duration-500 ease-out will-change-opacity ${logoDone ? 'opacity-100' : 'opacity-0'}`}>
-                <span className="text-[var(--preloader-text)] text-sm md:text-base font-medium tracking-widest uppercase">
+                <span className="text-(--preloader-text) text-sm md:text-base font-medium tracking-widest uppercase">
                     {LANGUAGES[index]}
                 </span>
             </div>

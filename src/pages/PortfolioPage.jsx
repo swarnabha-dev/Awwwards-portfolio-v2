@@ -29,7 +29,7 @@ const PortfolioPage = () => {
                 </div>
 
                 {work?.length > 0 && (
-                    <div className="stacked-section relative z-20 w-full stacked-bg border-t border-white/[0.06] shadow-[0_-1px_0_rgba(255,255,255,0.05)] transform-origin-bottom flex items-center">
+                    <div className="stacked-section relative z-20 w-full stacked-bg border-t border-white/6 shadow-[0_-1px_0_rgba(255,255,255,0.05)] transform-origin-bottom flex items-center">
                         <section className="relative w-full py-32 px-4 md:px-8 max-w-7xl mx-auto" id="work">
                             <div className="mb-20 flex flex-col items-center text-center">
                                 <span className="inline-block px-3 py-1 rounded-full mb-4 border text-xs font-bold tracking-widest uppercase" style={{ background: 'var(--glass-bg)', color: 'var(--text-tertiary)', borderColor: 'var(--glass-border)' }}>PORTFOLIO</span>
@@ -43,7 +43,7 @@ const PortfolioPage = () => {
                 )}
 
                 {research?.length > 0 && (
-                    <div className="stacked-section relative z-30 w-full stacked-bg border-t border-white/[0.06] shadow-[0_-1px_0_rgba(255,255,255,0.05)] transform-origin-bottom flex items-center">
+                    <div className="stacked-section relative z-30 w-full stacked-bg border-t border-white/6 shadow-[0_-1px_0_rgba(255,255,255,0.05)] transform-origin-bottom flex items-center">
                         <section className="relative w-full py-32 px-4 md:px-8 max-w-7xl mx-auto" id="research">
                             <div className="mb-20 flex flex-col items-center text-center">
                                 <span className="inline-block px-3 py-1 rounded-full mb-4 border text-xs font-bold tracking-widest uppercase" style={{ background: 'var(--glass-bg)', color: 'var(--text-tertiary)', borderColor: 'var(--glass-border)' }}>EXPLORATION</span>
@@ -116,13 +116,15 @@ const PortfolioPage = () => {
                                             <a
                                                 className="inline-flex items-center gap-2 px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 hover:opacity-80"
                                                 href={about.resumeLink}
+                                                rel="noopener noreferrer"
+                                                target="_blank"
                                                 style={{
                                                     background: 'var(--text-primary)',
                                                     color: 'var(--bg-base)',
                                                 }}
                                             >
-                                                <span className="material-symbols-outlined text-[18px]">download</span>
-                                                Download Resume
+                                                <span className="material-symbols-outlined text-[18px]">open_in_new</span>
+                                                View Resume
                                             </a>
                                         )}
                                     </div>
@@ -146,10 +148,10 @@ const PortfolioPage = () => {
                     </section>
                 </div>
 
-                <section className="relative w-full py-20 px-4 mt-20 mb-20 z-50 transform-origin-bottom bg-[var(--bg-base)]" id="contact">
+                <section className="relative w-full py-20 px-4 mt-20 mb-20 z-50 transform-origin-bottom bg-(--bg-base)" id="contact">
                     <div className="max-w-5xl mx-auto">
                         <div className="glass-card rounded-[48px] p-8 md:p-16 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-full h-full opacity-30 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-violet-600 via-transparent to-transparent pointer-events-none"></div>
+                            <div className="absolute top-0 right-0 w-full h-full opacity-30 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-violet-600 via-transparent to-transparent pointer-events-none"></div>
                             <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-12">
                                 <div className="space-y-8 flex-1">
                                     <h2 className="font-display text-5xl md:text-6xl font-bold tracking-tight" style={{ color: 'var(--text-primary)' }}>Ready to build?</h2>
@@ -175,7 +177,7 @@ const PortfolioPage = () => {
                                         </div>
                                     )}
                                 </div>
-                                <div className="flex-shrink-0">
+                                <div className="shrink-0">
                                     <button className="px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border" style={{ background: 'var(--text-primary)', color: 'var(--bg-base)', borderColor: 'var(--glass-border)' }}>
                                         Start a Project
                                     </button>

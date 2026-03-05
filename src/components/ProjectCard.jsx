@@ -86,7 +86,7 @@ const ProjectCard = ({ project, isLargeGap }) => {
         <div ref={cardRef} className={`group cursor-pointer project-trigger ${isLargeGap ? 'md:mt-24' : ''}`} onClick={handleClick}>
             <div className="project-card-inner project-card glass-card rounded-2xl md:rounded-[32px] overflow-hidden relative aspect-16/10 sm:aspect-4/3 shadow-lg">
                 <div className="absolute inset-0 bg-slate-50 dark:bg-slate-900 transition-colors duration-500">
-                    <div className={`w-full h-full bg-gradient-to-br ${project.gradient} flex items-center justify-center dark:opacity-20 transition-opacity`}>
+                    <div className={`w-full h-full bg-linear-to-br ${project.gradient} flex items-center justify-center dark:opacity-20 transition-opacity`}>
                         <span className="material-symbols-outlined text-4xl md:text-6xl text-slate-300 dark:text-slate-600 transition-colors">{project.icon}</span>
                     </div>
                 </div>
