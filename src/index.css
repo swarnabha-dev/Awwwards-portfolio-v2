@@ -79,50 +79,48 @@
 }
 
 [data-theme="dark"] {
-    /* Foundations */
-    --bg-base: #000000;
-    --bg-surface: #070707;
-    --bg-elevated: #111111;
+    /* Foundations — Deep warm zinc, not pitch black */
+    --bg-base: #0D0D0F;
+    --bg-surface: #111114;
+    --bg-elevated: #1A1A1F;
 
-    /* Aurora orbs (dark) - Deep, muted, expensive cinematic lighting */
-    --orb-1: hsla(220, 20%, 15%, 0.4);
-    --orb-2: hsla(260, 20%, 12%, 0.3);
-    --orb-3: hsla(200, 20%, 15%, 0.2);
-    --orb-4: hsla(0, 0%, 10%, 0.4);
-    --orb-5: hsla(40, 10%, 10%, 0.2);
+    /* Aurora orbs (dark) — Subtle but visible depth lighting */
+    --orb-1: hsla(220, 25%, 18%, 0.55);
+    --orb-2: hsla(260, 22%, 15%, 0.45);
+    --orb-3: hsla(200, 22%, 18%, 0.35);
+    --orb-4: hsla(30, 15%, 12%, 0.5);
+    --orb-5: hsla(40, 12%, 14%, 0.3);
 
     /* Text */
-    --text-primary: rgba(255, 255, 255, 0.9);
-    --text-secondary: rgba(255, 255, 255, 0.5);
-    --text-tertiary: rgba(255, 255, 255, 0.3);
+    --text-primary: rgba(255, 255, 255, 0.92);
+    --text-secondary: rgba(255, 255, 255, 0.55);
+    --text-tertiary: rgba(255, 255, 255, 0.35);
     --text-accent: #d4c5b0;
     /* Champagne / Titanium accent */
 
-    /* Preloader (Inverted) - light preloader for dark theme (slightly brighter aesthetic as requested) */
+    /* Preloader */
     --preloader-bg: #F0EBE1;
-    /* Brighter warm cream */
     --preloader-text: #1A1410;
     --preloader-accent: #C47E3E;
-    /* Bright amber gold */
 
-    /* Glass surfaces */
-    --glass-bg: rgba(255, 255, 255, 0.02);
-    --glass-border: rgba(255, 255, 255, 0.06);
-    --glass-shadow-a: rgba(0, 0, 0, 0.6);
-    --glass-shadow-b: rgba(0, 0, 0, 0.4);
-    --glass-inset: rgba(255, 255, 255, 0.03);
+    /* Glass surfaces — More visible depth */
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.10);
+    --glass-shadow-a: rgba(0, 0, 0, 0.5);
+    --glass-shadow-b: rgba(0, 0, 0, 0.3);
+    --glass-inset: rgba(255, 255, 255, 0.06);
 
     /* Nav */
-    --nav-bg: rgba(0, 0, 0, 0.6);
-    --nav-border: rgba(255, 255, 255, 0.08);
-    --nav-text: rgba(255, 255, 255, 0.7);
+    --nav-bg: rgba(13, 13, 15, 0.75);
+    --nav-border: rgba(255, 255, 255, 0.12);
+    --nav-text: rgba(255, 255, 255, 0.75);
     --logo-hover-fill: #C47E3E;
     --nav-pill: linear-gradient(135deg, rgba(212, 197, 176, 0.2), rgba(212, 197, 176, 0.05));
 
     /* Stacked section bg */
-    --stacked-bg: rgba(5, 5, 5, 0.5);
-    --stacked-blur: blur(50px) saturate(120%);
-    --stacked-border: rgba(255, 255, 255, 0.04);
+    --stacked-bg: rgba(17, 17, 20, 0.6);
+    --stacked-blur: blur(50px) saturate(140%);
+    --stacked-border: rgba(255, 255, 255, 0.07);
 
     /* Marquee blend */
     --marquee-blend: difference;
@@ -230,7 +228,7 @@
         border-radius: 50%;
         filter: blur(120px);
         z-index: -1;
-        opacity: 0.6;
+        opacity: 0.8;
         pointer-events: none;
         will-change: transform, opacity;
         transform: translateZ(0);
@@ -305,15 +303,24 @@
 
     .marquee-item {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 8vw;
-        /* Option A: thinner weight, reduced opacity, wider tracking */
-        font-weight: 300;
+        font-size: 11vw;
+        /* Larger on mobile */
+        font-weight: 700;
+        /* Bold globally */
         line-height: 0.85;
-        letter-spacing: 0.06em;
+        letter-spacing: 0.04em;
         color: var(--marquee-color);
         opacity: 0.9;
         padding-right: 0.4em;
         transition: color 0.5s, opacity 0.5s;
+    }
+
+    @media (min-width: 768px) {
+        .marquee-item {
+            font-size: 8vw;
+            /* Rein back on desktop */
+            font-weight: 700;
+        }
     }
 
     /* ── Tech Dock ── */

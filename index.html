@@ -16,9 +16,54 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     rel="stylesheet" />
+  <link rel="preload" as="image" href="/Picsart_26-01-08_21-07-32-700%20i.png" fetchpriority="high" />
+  <link rel="preload" as="image" href="/Gemini_Generated_Image_r21pfor21pfor21p.png" fetchpriority="high" />
+  <style>
+    body {
+      background: #070707;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    #initial-loader {
+      position: fixed;
+      inset: 0;
+      background: #070707;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .loader-dot {
+      width: 12px;
+      height: 12px;
+      background: #C47E3E;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(0.8);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div id="initial-loader">
+    <div class="loader-dot"></div>
+  </div>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>

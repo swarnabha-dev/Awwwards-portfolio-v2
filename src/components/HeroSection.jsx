@@ -20,6 +20,8 @@ const HeroSection = () => {
                     className="w-full h-full object-cover object-center md:object-contain md:object-bottom drop-shadow-[0_10px_30px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_20px_50px_rgba(255,255,255,0.15)] transition-transform duration-1000 ease-out z-10"
                     id="parallax-image"
                     src={hero?.portraitImage}
+                    fetchpriority="high"
+                    loading="eager"
                 />
             </div>
 
@@ -38,7 +40,7 @@ const HeroSection = () => {
 
             {/* Skills / Core Expertise - Positioned absolute side */}
             <div className="absolute bottom-[35vh] left-6 w-[280px] md:top-[25%] md:left-[8%] md:bottom-auto z-20 md:w-[400px]">
-                <div className="flex items-center gap-2 mb-2 md:mb-4 text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--text-tertiary)' }}>
+                <div className="flex items-center gap-2 mb-2 md:mb-4 text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--text-secondary)' }}>
                     <span>Expertise</span>
                 </div>
                 <div className="rotating-title-wrapper w-full text-left h-10 md:h-16">
@@ -53,7 +55,11 @@ const HeroSection = () => {
             <div className="absolute bottom-[8vh] left-1/2 transform -translate-x-1/2 z-30 text-center w-full" id="hero-meta">
                 <h2 className="text-sm md:text-lg font-light max-w-lg mx-auto leading-relaxed px-4">
                     {hero?.subtitle?.map((part, index) => (
-                        <span key={index} className={part.highlight ? "font-semibold" : "text-neutral-500 dark:text-neutral-400"} style={part.highlight ? { color: 'var(--text-primary)' } : {}}>
+                        <span
+                            key={index}
+                            className={part.highlight ? "font-semibold" : ""}
+                            style={{ color: part.highlight ? 'var(--text-primary)' : 'var(--text-secondary)' }}
+                        >
                             {part.text}
                         </span>
                     ))}

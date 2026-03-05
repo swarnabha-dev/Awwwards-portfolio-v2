@@ -6,7 +6,7 @@ export const portfolioData = {
         lastName: "HALDER",
         email: "swarnabha@swarnabha.tech",
         phone: "+91 7003084915",
-        favicon: "/Gemini_Generated_Image_r21pfor21pfor21p.png",
+        favicon: "/favicon.png",
         socials: [
             { name: "Twitter", url: "https://x.com/swarnabha_h" },
             { name: "LinkedIn", url: "https://www.linkedin.com/in/swarnabha-halder-627692254/" },
