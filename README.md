@@ -1,16 +1,90 @@
-# React + Vite
+# Awwwards Portfolio v3 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, premium developer portfolio built with modern web technologies, focusing on motion design, glassmorphism, and seamless user experiences. This project is designed to be highly configurable via a single data file.
 
-Currently, two official plugins are available:
+![Portfolio Screenshot](public/Picsart_26-01-08_21-07-32-700%20i.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+-   **Premium Aesthetics**: Modern UI with glassmorphism, aurora backgrounds (`mesh-gradients`), and editorial typography.
+-   **Immersive Motion**: Powered by **GSAP** and **Smooth Scroll (Lenis)** for fluid transitions and parallax effects.
+-   **Dynamic Theming**: Instant Dark/Light mode toggle with optimized CSS transitions for zero lag.
+-   **Case Study System**: Dynamic routing for detailed project explorations.
+-   **Performance Optimized**: Hardware-accelerated animations and targeted CSS repaints.
+-   **Fully Configurable**: Manage site name, expertise, projects, and contact info through `src/data/portfolioData.js`.
+-   **Responsive Design**: Completely fluid layout that adapts from mobile to ultra-wide displays.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+-   **Frontend**: React 19 + Vite
+-   **Styling**: Tailwind CSS v4 (Vanilla CSS for custom glass effects)
+-   **Animations**: GSAP (GreenSock) + CSS Keyframes
+-   **Scrolling**: Lenis Smooth Scroll
+-   **Icons**: Material Symbols + Lucide React
+-   **Routing**: React Router 7
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📁 Project Structure
+
+```text
+├── src/
+│   ├── components/       # Reusable UI components (NavBar, Hero, ProjectCard, etc.)
+│   ├── context/          # Global state (ThemeContext)
+│   ├── data/             # Configuration & Content (portfolioData.js)
+│   ├── hooks/            # Custom GSAP & Observer hooks
+│   ├── pages/            # Page-level components (Portfolio, Case Study)
+│   └── App.jsx           # Root layout & Routing
+├── public/               # Static assets & Images
+└── index.css             # Design tokens & Global styles
+```
+
+## 🚀 Getting Started
+
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/swarnabha-dev/Awwwards-portfolio-v2.git
+    cd Awwwards-portfolio-v2
+    ```
+
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+
+3.  **Run in development**:
+    ```bash
+    npm run dev
+    ```
+
+4.  **Build for production**:
+    ```bash
+    npm run build
+    ```
+
+## ⚙️ Configuration
+
+To customize the content, simply edit `src/data/portfolioData.js`. No need to touch the component logic for most updates!
+
+```javascript
+// Example: src/data/portfolioData.js
+export const portfolioData = {
+    general: {
+        siteName: "Your Name | Portfolio",
+        firstName: "JOHN",
+        lastName: "DOE",
+        email: "hello@example.com",
+        // ...
+    },
+    hero: {
+        expertise: ["AI Engineering", "3D Design", ...],
+        // ...
+    }
+}
+```
+
+## 📜 License
+
+MIT License. Feel free to use this as a base for your own portfolio!
+
+---
+
+Built with ❤️ by [Swarnabha Halder](https://swarnabha.tech)
