@@ -40,12 +40,19 @@ const HeroSection = () => {
 
             {/* Skills / Core Expertise - Positioned absolute side */}
             <div className="absolute bottom-[35vh] left-6 w-[280px] md:top-[25%] md:left-[8%] md:bottom-auto z-20 md:w-[400px]">
-                <div className="flex items-center gap-2 mb-2 md:mb-4 text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--text-secondary)' }}>
+                <div
+                    className="flex items-center gap-2 mb-2 md:mb-4 text-xs font-bold tracking-widest uppercase text-white md:text-(--text-secondary)"
+                    style={{ textShadow: '0 1px 12px rgba(0,0,0,0.4)' }}
+                >
                     <span>Expertise</span>
                 </div>
                 <div className="rotating-title-wrapper w-full text-left h-10 md:h-16">
                     {hero?.expertise?.map((exp, i) => (
-                        <span key={i} className={`rotating-title font-display text-3xl md:text-5xl font-normal ${i === 0 ? 'active' : ''}`} style={{ color: 'var(--text-primary)' }}>{exp}</span>
+                        <span
+                            key={i}
+                            className={`rotating-title font-display text-3xl md:text-5xl font-normal text-white md:text-(--text-primary) ${i === 0 ? 'active' : ''}`}
+                            style={{ textShadow: '0 1px 15px rgba(0,0,0,0.3)' }}
+                        >{exp}</span>
                     ))}
                 </div>
                 <div className="w-12 h-1 rounded-full mt-2" style={{ background: 'var(--text-accent)' }}></div>
@@ -53,12 +60,17 @@ const HeroSection = () => {
 
             {/* Hero Meta */}
             <div className="absolute bottom-[8vh] left-1/2 transform -translate-x-1/2 z-30 text-center w-full" id="hero-meta">
-                <h2 className="text-sm md:text-lg font-light max-w-lg mx-auto leading-relaxed px-4">
+                <h2
+                    className="text-sm md:text-lg font-light max-w-lg mx-auto leading-relaxed px-4 text-white"
+                    style={{ textShadow: '0 1px 10px rgba(0,0,0,0.5)' }}
+                >
                     {hero?.subtitle?.map((part, index) => (
                         <span
                             key={index}
                             className={part.highlight ? "font-semibold" : ""}
-                            style={{ color: part.highlight ? 'var(--text-primary)' : 'var(--text-secondary)' }}
+                            style={{
+                                color: part.highlight ? 'inherit' : 'rgba(255,255,255,0.9)',
+                            }}
                         >
                             {part.text}
                         </span>

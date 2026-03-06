@@ -14,8 +14,9 @@ const SmoothScroll = ({ children }) => {
             gestureDirection: 'vertical',
             smooth: true,
             mouseMultiplier: 0.8,
-            smoothTouch: true,
-            touchMultiplier: 1.5,
+            // smoothTouch causes touch scroll to break on many mobile browsers — use native
+            smoothTouch: false,
+            touchMultiplier: 2,
             infinite: false,
         });
 

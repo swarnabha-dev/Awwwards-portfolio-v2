@@ -138,10 +138,16 @@
         color: var(--text-primary);
         /* Very fast transition for core colors to feel responsive */
         transition: background-color 0.1s ease, color 0.1s ease;
+        /* Ensure touch scroll works */
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
     }
 
     body {
         background-color: transparent;
+        /* Fix: allow touch scroll on mobile */
+        touch-action: pan-y;
+        overflow-y: auto;
     }
 
     * {
@@ -303,12 +309,11 @@
 
     .marquee-item {
         font-family: 'Space Grotesk', sans-serif;
-        font-size: 11vw;
+        font-size: 14vw;
         /* Larger on mobile */
         font-weight: 700;
-        /* Bold globally */
         line-height: 0.85;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.03em;
         color: var(--marquee-color);
         opacity: 0.9;
         padding-right: 0.4em;
@@ -318,8 +323,8 @@
     @media (min-width: 768px) {
         .marquee-item {
             font-size: 8vw;
-            /* Rein back on desktop */
             font-weight: 700;
+            letter-spacing: 0.04em;
         }
     }
 

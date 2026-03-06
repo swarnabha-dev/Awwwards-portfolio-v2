@@ -103,14 +103,14 @@ const NavBar = ({ isCaseStudy = false }) => {
 
     const scrollToSection = (id) => {
         const element = document.getElementById(id);
-
         if (!element) return;
 
-        // Use globally exposed Lenis instance for smooth exact scrolling
+        // 'hero' section = scroll to very top (offset 0)
+        const offset = id === 'hero' ? 0 : -90;
+
         if (window.lenis) {
-            window.lenis.scrollTo(element, { offset: -100, duration: 1.5, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+            window.lenis.scrollTo(element, { offset, duration: 1.5, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
         } else {
-            // Fallback
             element.scrollIntoView({ behavior: 'smooth' });
         }
     };

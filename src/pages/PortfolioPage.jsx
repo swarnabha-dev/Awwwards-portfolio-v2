@@ -182,9 +182,13 @@ const PortfolioPage = () => {
                                     )}
                                 </div>
                                 <div className="shrink-0">
-                                    <button className="px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border" style={{ background: 'var(--text-primary)', color: 'var(--bg-base)', borderColor: 'var(--glass-border)' }}>
+                                    <a
+                                        href={`mailto:${general?.email || ''}`}
+                                        className="px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 border inline-block"
+                                        style={{ background: 'var(--text-primary)', color: 'var(--bg-base)', borderColor: 'var(--glass-border)' }}
+                                    >
                                         Start a Project
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
